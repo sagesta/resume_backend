@@ -66,7 +66,7 @@ const MenuBar = ({ editor }: { editor: Editor | null }) => {
     };
 
     return (
-        <div className="flex flex-wrap gap-2 p-2 border-b bg-slate-50 rounded-t-lg">
+        <div className="flex flex-wrap gap-2 p-2 border-b border-slate-300 bg-slate-100 rounded-t-lg">
             <button
                 onClick={() => editor.chain().focus().toggleBold().run()}
                 disabled={!editor.can().chain().focus().toggleBold().run()}
@@ -200,7 +200,7 @@ export default function RichTextEditor({ content, onChange, className = '' }: Ri
     }, [content, editor]);
 
     return (
-        <div className={`border rounded-lg overflow-hidden bg-white ${className}`}>
+        <div className={`border border-slate-300 rounded-lg overflow-hidden bg-white ${className}`}>
             <MenuBar editor={editor} />
             <EditorContent editor={editor} />
         </div>
